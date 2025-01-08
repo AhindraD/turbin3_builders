@@ -1,4 +1,3 @@
-
 ![Screenshot 2025-01-08 153657](https://github.com/user-attachments/assets/6f0556bf-1fc9-45bd-8634-17f686b1bd7e)
 
 # Turbin3 2025 Q1 Cohort
@@ -38,7 +37,7 @@
     <br>
 
     - ## Airdrop:
-      Adds 2 SOL to your wallet in devnet.
+      Adds some SOL to your wallet in devnet.
       ```bash
           yarn airdrop
       ```
@@ -59,3 +58,12 @@
           yarn enroll
       ```
       Get the transaction hash from the terminal output. And inspect it in Solana Explorer.
+
+    <br>
+
+    - ## base58_To_Wallet_Byte_Array_cli_converter:
+      Converts base58-encoded private key to wallet byte array, and vice versa.
+      Wallets like Phantom and Solflare only support base58-encoded private keys.
+      ```bash
+          yarn convert
+      ```
