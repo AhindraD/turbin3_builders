@@ -1,5 +1,5 @@
 import { Keypair, Connection, LAMPORTS_PER_SOL } from "@solana/web3.js";
-import dev_wallet from "./wallet.json";
+import dev_wallet from "./dev-wallet.json";
 
 const dev_keypair = Keypair.fromSecretKey(new Uint8Array(dev_wallet));
 const conn = new Connection("https://api.devnet.solana.com");
