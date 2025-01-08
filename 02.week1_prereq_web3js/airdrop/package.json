@@ -1,0 +1,17 @@
+{
+  "name": "airdrop",
+  "version": "1.0.0",
+  "description": "solana turbine pre-req Q1 2025",
+  "main": "index.js",
+  "author": "AhindraD",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "@types/node": "^22.10.5",
+    "bs58": "^6.0.0",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}

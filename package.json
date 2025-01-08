@@ -1,0 +1,8 @@
+{
+  "name": "turbin3_builders",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AhindraD/turbin3_builders.git",
+  "author": "Ahindra D. <official.ahindra@gmail.com>",
+  "license": "MIT"
+}
