@@ -1,12 +1,12 @@
-# WBA Prereq Program
+# Turbin3 2025 Q1 Prereq Program
 
-- # Final Assignment Interaction with the WBA Prereq Program:
+- # WEEK1: Task 01 - Interaction with the Prereq Program:
 
-  ## Transaction Hash: https://explorer.solana.com/tx/4eunAWyUyVVygw1fw6Ucn2rBeV2ntpLbba7xjo3pikCaJSqFTjEYsN3Hb6UFLSmApx4ErrU3G2fCnW83h9Tz7ioM?cluster=devnet
+  ## Transaction Hash: https://explorer.solana.com/tx/22STvcPPZx8FtvxtyeqJEhWKEXuRAiiDzQqmAqR3mEkzqmH4jKKMEoZYt6NhDi3LsmwA3roENDWt1cqK55FQdpMN?cluster=devnet
 
 - # All the clinet-side programs:
 
-  - Inside the repo subfolder: [AIRDROP](https://github.com/AhindraD/turbin3_builders/tree/main/brige-to-turbin3/airdrop)
+  - Inside the repo subfolder: [WEEK 1 : AIRDROP](https://github.com/AhindraD/turbin3_builders/tree/main/02.week1_prereq_web3js/airdrop)
 
   - ## To run the programs:
 
@@ -14,9 +14,9 @@
       ```bash
       git clone https://github.com/AhindraD/turbin3_builders.git
       ```
-    - cd to "brige-to-turbin3/airdrop" from root
+    - cd to "02.week1_prereq_web3js/airdrop" from root
       ```bash
-        cd brige-to-turbin3/airdrop
+        cd 02.week1_prereq_web3js/airdrop
       ```
     - Install dependencies:
       ```bash
@@ -27,7 +27,7 @@
 
     - ## Keygen:
       Generates a new keypair,
-      Add your wallet private key in a file named "wallet.json" in Unit8Array format(from the cli terminal output).
+      Add your wallet private key in a file named "dev-wallet.json" in Unit8Array format(from the cli terminal output).
       ```bash
           yarn keygen
       ```
@@ -43,7 +43,7 @@
     <br>
 
     - ## Transfer:
-      Transfer 1.3 SOL from one wallet to another.
+      Transfer ALL SOL from dev-wallet to Turbin3 Wallet
       ```bash
           yarn transfer
       ```
@@ -51,10 +51,8 @@
     <br>
 
     - ## Enroll:
-      Completes the prereq program. interacts with the WBA program, more specifically the "complete" instruction with the github username as an input.
+      Completes the prereq program. interacts with the Turbine program, more specifically the "complete" instruction with the github username as an input.
       ```bash
           yarn enroll
       ```
       Get the transaction hash from the terminal output. And inspect it in Solana Explorer.
-
-![image](https://github.com/user-attachments/assets/4be89c56-fab3-4c74-99cf-dd9c941fbde8)
