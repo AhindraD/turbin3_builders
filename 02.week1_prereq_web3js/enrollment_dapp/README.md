@@ -4,7 +4,7 @@
 
 - # WEEK1: Task 02 - RUST : Interaction with the WBA Prereq Program:
 
-  ## Transaction Hash: https://explorer.solana.com/tx/5S1bagk2u5tA6hD8fGKSZFfZLkCatAJRcDqY5QsP9P75AQNd6VxazqJHsmu5zMZURc5xAkA34qAfoJcHj2Ba72G3?cluster=devnet
+  ## Transaction Hash: https://explorer.solana.com/tx/5WYcvZjpouBusi3D8zjWjQJqUtaEJjSTMjRKAFu2pMkcZTa3mkqT2f32EP1CFcFnahJ9a3M1zy1UEWz3hUjZ6jV8?cluster=devnet
 
 - # All the clinet-side programs:
 
