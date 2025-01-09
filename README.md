@@ -31,7 +31,7 @@
       Generates a new keypair,
       Add your wallet private key in a file named "dev-wallet.json" in Unit8Array format(from the cli terminal output).
       ```bash
-          yarn keygen
+          cargo test --package enrollment_dapp --lib -- tests::keygen --exact --show-output 
       ```
 
     <br>
@@ -39,7 +39,7 @@
     - ## Airdrop:
       Adds some SOL to your wallet in devnet.
       ```bash
-          yarn airdrop
+         cargo test --package enrollment_dapp --lib -- tests::airdrop --exact --show-output 
       ```
 
     <br>
@@ -47,7 +47,7 @@
     - ## Transfer:
       Transfer ALL SOL from dev-wallet to Turbin3 Wallet
       ```bash
-          yarn transfer
+          cargo test --package enrollment_dapp --lib -- tests::transfer_sol --exact --show-output 
       ```
 
     <br>
@@ -55,7 +55,7 @@
     - ## Enroll:
       Completes the prereq program. interacts with the Turbine program, more specifically the "complete" instruction with the github username as an input.
       ```bash
-          yarn enroll
+          cargo test --package enrollment_dapp --lib -- tests::enroll --exact --show-output 
       ```
       Get the transaction hash from the terminal output. And inspect it in Solana Explorer.
 
@@ -65,5 +65,6 @@
       Converts base58-encoded private key to wallet byte array, and vice versa.
       Wallets like Phantom and Solflare only support base58-encoded private keys.
       ```bash
-          yarn convert
+          cargo test --package enrollment_dapp --lib -- tests::base58_to_wallet --exact --show-output 
+          cargo test --package enrollment_dapp --lib -- tests::wallet_to_base58 --exact --show-output 
       ```
