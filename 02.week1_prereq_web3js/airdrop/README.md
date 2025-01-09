@@ -2,13 +2,13 @@
 
 # Turbin3 2025 Q1 Cohort
 
-- # WEEK1: Task 02 - RUST : Interaction with the WBA Prereq Program:
+- # WEEK1: Task 01 - Interaction with the Prereq Program:
 
-  ## Transaction Hash: https://explorer.solana.com/tx/5S1bagk2u5tA6hD8fGKSZFfZLkCatAJRcDqY5QsP9P75AQNd6VxazqJHsmu5zMZURc5xAkA34qAfoJcHj2Ba72G3?cluster=devnet
+  ## Transaction Hash: https://explorer.solana.com/tx/22STvcPPZx8FtvxtyeqJEhWKEXuRAiiDzQqmAqR3mEkzqmH4jKKMEoZYt6NhDi3LsmwA3roENDWt1cqK55FQdpMN?cluster=devnet
 
 - # All the clinet-side programs:
 
-  - Inside the repo subfolder: [WEEK 1 : RUST_ENROLL](https://github.com/AhindraD/turbin3_builders/tree/main/02.week1_prereq_web3js/enrollment_dapp)
+  - Inside the repo subfolder: [WEEK 1 : AIRDROP](https://github.com/AhindraD/turbin3_builders/tree/main/02.week1_prereq_web3js/airdrop)
 
   - ## To run the programs:
 
@@ -18,11 +18,11 @@
       ```
     - cd to "02.week1_prereq_web3js/airdrop" from root
       ```bash
-        cd 02.week1_prereq_web3js/enrollment_dapp
+        cd 02.week1_prereq_web3js/airdrop
       ```
     - Install dependencies:
       ```bash
-        cargo install
+        yarn install
       ```
 
     <br>
