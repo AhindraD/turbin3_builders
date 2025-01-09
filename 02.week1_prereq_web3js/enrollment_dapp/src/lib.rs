@@ -2,6 +2,7 @@ use bs58;
 use solana_client::rpc_client::RpcClient;
 use solana_program::{pubkey::Pubkey, system_instruction::transfer};
 use solana_sdk::{
+    message::Message,
     signature::{read_keypair_file, Keypair, Signer},
     transaction::Transaction,
 };
@@ -91,6 +92,48 @@ mod tests {
             recent_blockhash,
         );
 
+        let txn = rpc
+            .send_and_confirm_transaction(&transaction)
+            .expect("Couldn't send transaction");
+        println!("Transaction Successful!");
+        println!("https://explorer.solana.com/tx/{}?cluster=devnet", txn);
+    }
+
+    #[test]
+    fn empty_wallet() {
+        let from_wallet: Keypair =
+            read_keypair_file("dev-wallet.json").expect("Couldn't find wallet file");
+        let rpc = RpcClient::new(RPC_URL);
+        let to_wallet = Pubkey::from_str("AHibwaXG2EVnD1jTvD93166tunfNecvMcVQhcQKL3UZv").unwrap();
+
+        let initial_balance = rpc
+            .get_balance(&from_wallet.pubkey())
+            .expect("Couldn't get balance");
+        let recent_blockhash = rpc
+            .get_latest_blockhash()
+            .expect("Couldn't get recent blockhash");
+
+        let message = Message::new_with_blockhash(
+            &[transfer(&from_wallet.pubkey(), &to_wallet, initial_balance)],
+            Some(&from_wallet.pubkey()),
+            &recent_blockhash,
+        );
+        let fee = rpc.get_fee_for_message(&message).expect("Couldn't get fee");
+
+        println!("Initial balance: {}", initial_balance);
+        println!("Fee: {}", fee);
+        println!("blockhash: {:?}", recent_blockhash);
+
+        let transaction = Transaction::new_signed_with_payer(
+            &[transfer(
+                &from_wallet.pubkey(),
+                &to_wallet,
+                initial_balance - fee,
+            )],
+            Some(&from_wallet.pubkey()),
+            &vec![&from_wallet],
+            recent_blockhash,
+        );
         let txn = rpc
             .send_and_confirm_transaction(&transaction)
             .expect("Couldn't send transaction");
