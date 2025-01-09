@@ -8,13 +8,15 @@ use solana_sdk::{
 };
 use std::io::{self, BufRead};
 use std::str::FromStr;
+mod programs;
 
 const RPC_URL: &str = "https://api.devnet.solana.com";
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use solana_sdk::system_program;
 
+    use super::*;
     #[test]
     fn keygen() {
         let dev_kp = Keypair::new();
@@ -138,6 +140,38 @@ mod tests {
             .send_and_confirm_transaction(&transaction)
             .expect("Couldn't send transaction");
         println!("Transaction Successful!");
+        println!("https://explorer.solana.com/tx/{}?cluster=devnet", txn);
+    }
+
+    #[test]
+    fn enroll() {
+        use crate::programs::Turbin3_prereq::{CompleteArgs, Turbin3PrereqProgram, UpdateArgs};
+        let rpc_client = RpcClient::new(RPC_URL);
+        let turbin3_wallet: Keypair =
+            read_keypair_file("Turbin3-wallet.json").expect("Couldn't find wallet file");
+
+        let prereq_pda = Turbin3PrereqProgram::derive_program_address(&[
+            b"prereq",
+            turbin3_wallet.pubkey().to_bytes().as_ref(),
+        ]);
+        let args = CompleteArgs {
+            github: b"AhindraD".to_vec(),
+        };
+        let recent_blockhash = rpc_client
+            .get_latest_blockhash()
+            .expect("Couldn't get recent blockhash");
+
+        let instruction = Turbin3PrereqProgram::complete(
+            &[&turbin3_wallet.pubkey(), &prereq_pda, &system_program::id()],
+            &args,
+            Some(&turbin3_wallet.pubkey()),
+            &[&turbin3_wallet],
+            recent_blockhash,
+        );
+        let txn = rpc_client
+            .send_and_confirm_transaction(&instruction)
+            .expect("Couldn't send transaction");
+        println!("Enrollment Successful!");
         println!("https://explorer.solana.com/tx/{}?cluster=devnet", txn);
     }
 }
