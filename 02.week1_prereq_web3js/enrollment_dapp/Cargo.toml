@@ -5,4 +5,6 @@ edition = "2021"
 
 [dependencies]
 bs58 = "0.5.1"
+solana-client = "2.1.7"
+solana-program = "2.1.7"
 solana-sdk = "2.1.7"

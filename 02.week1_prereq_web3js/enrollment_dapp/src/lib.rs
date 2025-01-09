@@ -1,9 +1,12 @@
 use bs58;
+use solana_client::rpc_client::RpcClient;
 use solana_sdk::{
     pubkey::Pubkey,
-    signature::{Keypair, Signer},
+    signature::{read_keypair_file, Keypair, Signer},
 };
 use std::io::{self, BufRead};
+
+const RPC_URL: &str = "https://api.devnet.solana.com";
 
 #[cfg(test)]
 mod tests {
@@ -49,7 +52,24 @@ mod tests {
     }
 
     #[test]
-    fn airdrop() {}
+    fn airdrop() {
+        let dev_wallet: Keypair =
+            read_keypair_file("dev-wallet.json").expect("Couldn't find wallet file");
+        let rpc = RpcClient::new(RPC_URL);
+
+        match rpc.request_airdrop(&dev_wallet.pubkey(), 500_000_000u64) {
+            Ok(txn_hash) => {
+                println!("Airdrop successful!");
+                println!(
+                    "https://explorer.solana.com/tx/{}?cluster=devnet",
+                    txn_hash.to_string()
+                );
+            }
+            Err(e) => {
+                println!("Airdrop failed: {:?}", e);
+            }
+        }
+    }
 
     #[test]
     fn transfer_sol() {}
