@@ -145,12 +145,12 @@ mod tests {
 
     #[test]
     fn enroll() {
-        use crate::programs::Turbin3_prereq::{CompleteArgs, Turbin3PrereqProgram, UpdateArgs};
+        use crate::programs::Turbin3_prereq::{CompleteArgs, WbaPrereqProgram};
         let rpc_client = RpcClient::new(RPC_URL);
         let turbin3_wallet: Keypair =
             read_keypair_file("Turbin3-wallet.json").expect("Couldn't find wallet file");
 
-        let prereq_pda = Turbin3PrereqProgram::derive_program_address(&[
+        let prereq_pda = WbaPrereqProgram::derive_program_address(&[
             b"prereq",
             turbin3_wallet.pubkey().to_bytes().as_ref(),
         ]);
@@ -161,7 +161,7 @@ mod tests {
             .get_latest_blockhash()
             .expect("Couldn't get recent blockhash");
 
-        let instruction = Turbin3PrereqProgram::complete(
+        let instruction = WbaPrereqProgram::complete(
             &[&turbin3_wallet.pubkey(), &prereq_pda, &system_program::id()],
             &args,
             Some(&turbin3_wallet.pubkey()),

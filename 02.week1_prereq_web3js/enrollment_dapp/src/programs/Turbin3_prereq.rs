@@ -1,4 +1,4 @@
-use idlgen::idlgen;
+use solana_idlgen::idlgen;
 idlgen!({
     "version": "0.1.0",
     "name": "wba_prereq",
