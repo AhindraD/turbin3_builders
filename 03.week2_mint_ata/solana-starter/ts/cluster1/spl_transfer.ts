@@ -1,5 +1,5 @@
 import { Commitment, Connection, Keypair, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js"
-import wallet from "../wba-wallet.json"
+import wallet from "./wallet/wba-wallet.json"
 import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
 
 // We're going to import our keypair from the wallet file
@@ -22,7 +22,7 @@ const to = new PublicKey("<receiver address>");
         // Get the token account of the toWallet address, and if it does not exist, create it
 
         // Transfer the new token to the "toTokenAccount" we just created
-    } catch(e) {
+    } catch (e) {
         console.error(`Oops, something went wrong: ${e}`)
     }
 })();
