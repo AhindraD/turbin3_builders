@@ -1,3 +1,4 @@
 [submodule "notesols-dapp"]
 	path = notesols-dapp
 	url = https://github.com/AhindraD/notesols.git
+	branch = master
