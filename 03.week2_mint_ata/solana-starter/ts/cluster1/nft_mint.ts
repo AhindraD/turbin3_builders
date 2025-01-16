@@ -30,5 +30,6 @@ const metadata_uri = "https://devnet.irys.xyz/FSRRRCQvyJYonJeWCEqegTwDSdNU9NY2z2
 
     console.log(`Succesfully Minted! Check out your TX here:\nhttps://explorer.solana.com/tx/${signature}?cluster=devnet`)
     //https://explorer.solana.com/tx/4ug7nzvR2qFcv65CFQXMNJy5swb6gzefLMooJU7eEZjmprP6QWb3PJHdqDH8peC4955t1dRCjVxm96nSR86RkhFV?cluster=devnet
+    //https://explorer.solana.com/address/FXESkJELUiLnuNJbhU76TdPsGuzqp6jfGZw42qCoGDP8?cluster=devnet
     console.log("Mint Address: ", mint.publicKey);
 })();
