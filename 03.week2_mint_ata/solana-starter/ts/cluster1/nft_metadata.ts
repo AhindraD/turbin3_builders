@@ -3,6 +3,7 @@ import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createGenericFile, createSignerFromKeypair, percentAmount, signerIdentity } from "@metaplex-foundation/umi"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
 import { json } from "stream/consumers";
+import { collect, collectionDetails } from "@metaplex-foundation/mpl-token-metadata";
 
 // Create a devnet connection
 const umi = createUmi('https://api.devnet.solana.com');
@@ -22,9 +23,9 @@ umi.use(signerIdentity(signer));
         const metadata = {
             name: "Master Chef Spartan NFT",
             symbol: "HALO",
-            description: "A Spartan NFT, the first of its kind. Build for Turbin3 Q1 2025 Builders' Cohort.",
+            description: "A Spartan NFT, the first of its kind. Build for Turbin3 Q1 2025 Builders' Cohort. Created by @Ahindra_D",
             image: image,
-            external_url: "https://github.com/AhindraD/turbin3_builders",
+            external_url: "https://x.com/Ahindra_D",
             attributes: [
                 { trait_type: "Level", value: 'Master' },
                 { trait_type: "Class", value: 'Spartan' },
@@ -43,7 +44,12 @@ umi.use(signerIdentity(signer));
                 address: "5QQXFaZX9mmmGGqEcZSPFKgfr18BdHyvjfVys2DYLk3E",
                 share: 333,
                 verified: true
-            }]
+            }],
+            collectionDetails: {
+                name: "Turbin3 Q1 2025 Builders' Cohort",
+                family: "Turbin3",
+                verified: true
+            }
         };
         const myUri = await umi.uploader.uploadJson(metadata);
         const correct_uri = myUri.replace("https://arweave.net/", "https://devnet.irys.xyz/");
