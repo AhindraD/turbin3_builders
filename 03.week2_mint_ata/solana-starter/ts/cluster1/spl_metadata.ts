@@ -1,8 +1,8 @@
-import wallet from "../dev-wallet.json"
+import wallet from "./wallet/wba-wallet.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
-import { 
-    createMetadataAccountV3, 
-    CreateMetadataAccountV3InstructionAccounts, 
+import {
+    createMetadataAccountV3,
+    CreateMetadataAccountV3InstructionAccounts,
     CreateMetadataAccountV3InstructionArgs,
     DataV2Args
 } from "@metaplex-foundation/mpl-token-metadata";
@@ -10,7 +10,7 @@ import { createSignerFromKeypair, signerIdentity, publicKey } from "@metaplex-fo
 import { bs58 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
 
 // Define our Mint address
-const mint = publicKey("<mint address>")
+const mint = publicKey("5QQXFaZX9mmmGGqEcZSPFKgfr18BdHyvjfVys2DYLk3E")
 
 // Create a UMI connection
 const umi = createUmi('https://api.devnet.solana.com');
@@ -21,29 +21,49 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
 (async () => {
     try {
         // Start here
-        // let accounts: CreateMetadataAccountV3InstructionAccounts = {
-        //     ???
-        // }
+        let accounts: CreateMetadataAccountV3InstructionAccounts = {
+            mint: mint,
+            mintAuthority: signer,
+            payer: signer,
+            updateAuthority: signer
+        }
 
-        // let data: DataV2Args = {
-        //     ???
-        // }
+        let data: DataV2Args = {
+            name: "Whal3",
+            symbol: "WH3",
+            uri: "https://arweave.net/Whal3",
+            sellerFeeBasisPoints: 300, // 3% royalty fee
+            creators: [
+                {
+                    address: publicKey("5QQXFaZX9mmmGGqEcZSPFKgfr18BdHyvjfVys2DYLk3E"),
+                    share: 100,
+                    verified: false
+                }
+            ],
+            collection: {
+                key: publicKey("5QQXFaZX9mmmGGqEcZSPFKgfr18BdHyvjfVys2DYLk3E"),
+                verified: false
+            },
+            uses: null
+        }
 
-        // let args: CreateMetadataAccountV3InstructionArgs = {
-        //     ???
-        // }
+        let args: CreateMetadataAccountV3InstructionArgs = {
+            data: data,
+            isMutable: true,
+            collectionDetails: null
+        }
 
-        // let tx = createMetadataAccountV3(
-        //     umi,
-        //     {
-        //         ...accounts,
-        //         ...args
-        //     }
-        // )
+        let tx = createMetadataAccountV3(
+            umi,
+            {
+                ...accounts,
+                ...args
+            }
+        )
 
-        // let result = await tx.sendAndConfirm(umi);
-        // console.log(bs58.encode(result.signature));
-    } catch(e) {
+        let result = await tx.sendAndConfirm(umi);
+        console.log(bs58.encode(result.signature));
+    } catch (e) {
         console.error(`Oops, something went wrong: ${e}`)
     }
 })();
