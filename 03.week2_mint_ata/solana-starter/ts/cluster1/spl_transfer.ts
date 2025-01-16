@@ -1,6 +1,7 @@
 import { Commitment, Connection, Keypair, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js"
 import wallet from "./wallet/wba-wallet.json"
 import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
+import { getExplorerLink } from "@solana-developers/helpers";
 
 // We're going to import our keypair from the wallet file
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
@@ -8,6 +9,7 @@ const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
 //Create a Solana devnet connection
 const commitment: Commitment = "confirmed";
 const connection = new Connection("https://api.devnet.solana.com", commitment);
+const token_decimals = 1_000_000n;
 
 // Mint address
 const mint = new PublicKey("5QQXFaZX9mmmGGqEcZSPFKgfr18BdHyvjfVys2DYLk3E");
@@ -39,10 +41,10 @@ const to = new PublicKey("FofguT8vXbDCR8iCdEhGJmqM5fWVgf2akHTk3MavBMrQ");
             fromTokenAcc.address,
             toTokenAcc.address,
             keypair.publicKey,
-            10 ** 6
+            token_decimals * 13n
         )
-
-        console.log(`Transfer success! Check out your TX here:\n\nhttps://explorer.solana.com/tx/${sig_hash}?cluster=devnet`)
+        const token_transfer_link = getExplorerLink("tx", sig_hash, 'devnet');
+        console.log(`✅ Finished! Transferred token: ${token_transfer_link}`);
     } catch (e) {
         console.error(`Oops, something went wrong: ${e}`)
     }

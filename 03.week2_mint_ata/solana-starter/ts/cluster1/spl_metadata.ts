@@ -8,6 +8,7 @@ import {
 } from "@metaplex-foundation/mpl-token-metadata";
 import { createSignerFromKeypair, signerIdentity, publicKey } from "@metaplex-foundation/umi";
 import { bs58 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
+import { getExplorerLink } from "@solana-developers/helpers";
 
 // Define our Mint address
 const mint = publicKey("5QQXFaZX9mmmGGqEcZSPFKgfr18BdHyvjfVys2DYLk3E")
@@ -63,6 +64,8 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
 
         let result = await tx.sendAndConfirm(umi);
         console.log(bs58.encode(result.signature));
+        const sign_explorere_link = getExplorerLink("tx", bs58.encode(result.signature), 'devnet');
+        console.log(`✅ Finished! Check out your TX here:\n${sign_explorere_link}`);
     } catch (e) {
         console.error(`Oops, something went wrong: ${e}`)
     }
