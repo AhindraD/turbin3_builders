@@ -4,11 +4,11 @@
 
 - # WEEK2: Task 02 - Minted OG NFT
 
-  ![Screenshot 2025-01-17 010117](https://github.com/user-attachments/assets/f8806c3b-7752-4350-b80b-f835442226f3)
+ ![Screenshot 2025-01-17 050131](https://github.com/user-attachments/assets/031e33c8-4e17-49bf-85d4-d7ed2e2be941)
 
   ## Transaction Hash: https://explorer.solana.com/address/6X1EaiVhcn8z3GNb2nmtBDvoA33sr87AMfcp5rNkiuMf/metadata?cluster=devnet
 
-    <br>
+  <br>
 
 
 - # WEEK1: Task 02 - RUST : Interaction with the WBA Prereq Program:
