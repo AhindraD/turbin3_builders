@@ -6,7 +6,7 @@
 
   ![Screenshot 2025-01-17 010117](https://github.com/user-attachments/assets/f8806c3b-7752-4350-b80b-f835442226f3)
 
-  ## Transaction Hash: https://explorer.solana.com/address/FXESkJELUiLnuNJbhU76TdPsGuzqp6jfGZw42qCoGDP8?cluster=devnet
+  ## Transaction Hash: https://explorer.solana.com/address/6X1EaiVhcn8z3GNb2nmtBDvoA33sr87AMfcp5rNkiuMf/metadata?cluster=devnet
 
     <br>
 
