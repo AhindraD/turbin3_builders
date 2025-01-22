@@ -89,4 +89,21 @@ impl<'info> Payments<'info> {
         let _ = transfer(cpi_ctx, amount);
         Ok(())
     }
+
+    pub fn withdraw(&mut self, amount: u64) -> Result<()> {
+        let cpi_program = self.system_program.to_account_info();
+        let ctx_accounts = Transfer {
+            from: self.vault.to_account_info(),
+            to: self.user.to_account_info(),
+        };
+
+        //derive PDA to sign the transfer as the vault
+        let state_key = self.state.to_account_info().key();
+        let seeds = &[b"vault", state_key.as_ref(), &[self.state.vault_bump]];
+        let signer_seeds = &[&seeds[..]]; //reference to array of references
+
+        let cpi_ctx = CpiContext::new_with_signer(cpi_program, ctx_accounts, signer_seeds);
+        let _ = transfer(cpi_ctx, amount);
+        Ok(())
+    }
 }
