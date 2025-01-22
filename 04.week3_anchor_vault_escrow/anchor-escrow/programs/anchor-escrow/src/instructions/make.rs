@@ -66,7 +66,7 @@ impl<'info> Make<'info> {
             mint: self.mint_a.to_account_info(),
         };
         let ctx = CpiContext::new(ctx_program, ctx_account);
-        transfer_checked(ctx, deposit, self.mint_a.decimals);
+        let _ = transfer_checked(ctx, deposit, self.mint_a.decimals);
         Ok(())
     }
 }
