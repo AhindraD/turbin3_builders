@@ -1,7 +1,6 @@
 use crate::state::EscrowState;
 use anchor_lang::prelude::*;
 use anchor_spl::{
-    self,
     associated_token::AssociatedToken,
     token_interface::{transfer_checked, Mint, TokenAccount, TokenInterface, TransferChecked},
 };
@@ -9,7 +8,7 @@ use anchor_spl::{
 const ANCHOR_DISCRIMINATOR_LENGTH: usize = 8;
 
 #[derive(Accounts)]
-#[instruction(seed: u64)]
+#[instruction(seed: u8)]
 pub struct Make<'info> {
     #[account(mut)]
     pub maker: Signer<'info>,
@@ -41,7 +40,7 @@ pub struct Make<'info> {
     pub vault: InterfaceAccount<'info, TokenAccount>,
 
     pub associated_token_program: Program<'info, AssociatedToken>,
-    pub token_program: Program<'info, TokenInterface>,
+    pub token_program: Interface<'info, TokenInterface>,
     pub system_program: Program<'info, System>,
 }
 
