@@ -12,7 +12,21 @@ pub mod anchor_vault {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
+        let _ = ctx.accounts.initialize(&ctx.bumps);
+        Ok(())
+    }
+
+    pub fn deposit(ctx: Context<Payments>, amount: u64) -> Result<()> {
+        let _ = ctx.accounts.deposit(amount);
+        Ok(())
+    }
+    pub fn withdraw(ctx: Context<Payments>, amount: u64) -> Result<()> {
+        let _ = ctx.accounts.withdraw(amount);
+        Ok(())
+    }
+
+    pub fn close(ctx: Context<Close>)->Result<()>{
+        let _=ctx.accounts.close();
         Ok(())
     }
 }
