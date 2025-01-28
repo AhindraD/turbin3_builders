@@ -8,7 +8,7 @@ use anchor_spl::{
 const ANCHOR_DISCRIMINATOR_LENGTH: usize = 8;
 
 #[derive(Accounts)]
-#[instruction(seed: u8)]
+#[instruction(seed: u64)]
 pub struct Make<'info> {
     #[account(mut)]
     pub maker: Signer<'info>,
@@ -45,7 +45,7 @@ pub struct Make<'info> {
 }
 
 impl<'info> Make<'info> {
-    pub fn make(&mut self, seed: u64, recieve: u64, bumps: &MakeBumps) -> Result<()> {
+    pub fn init_escrow(&mut self, seed: u64, recieve: u64, bumps: &MakeBumps) -> Result<()> {
         self.ecsrow.set_inner(EscrowState {
             seed,
             maker: self.maker.key(),

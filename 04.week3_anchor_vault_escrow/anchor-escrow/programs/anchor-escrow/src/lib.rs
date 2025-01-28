@@ -12,7 +12,9 @@ pub use instructions::*;
 pub mod anchor_escrow {
     use super::*;
 
-    pub fn make(ctx: Context<Make>) -> Result<()> {
+    pub fn make(ctx: Context<Make>, seed: u64, recieve: u64, deposit: u64) -> Result<()> {
+        let _ = ctx.accounts.init_escrow(seed, recieve, &ctx.bumps);
+        let _ = ctx.accounts.deposit(deposit);
         Ok(())
     }
 }
