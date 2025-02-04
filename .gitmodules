@@ -1,7 +1,6 @@
 [submodule "notesols-dapp"]
 	path = notesols-dapp
 	url = https://github.com/AhindraD/notesols.git
-	branch = master
 [submodule "04.week3_token_swap/spl-token-swap-escrow"]
 	path = 04.week3_token_swap/spl-token-swap-escrow
 	url = https://github.com/AhindraD/spl-token-swap-escrow.git
