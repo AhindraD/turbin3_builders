@@ -2,6 +2,12 @@
 
 # Turbin3 2025 Q1 Cohort
 
+- # CAPSTONE: PrismPapers - Decentralized Research Platform
+  ## Architecture Diagram:
+  ![image](https://gist.github.com/user-attachments/assets/2e0c860a-01a5-4367-9100-934844fa8ce6)
+
+  [View on Eraser](https://app.eraser.io/workspace/srtYuk9xciXjH6IUKwJs)
+
 - # WEEK2: Task 02 - Minted OG NFT
 
  ![Screenshot 2025-01-17 050131](https://github.com/user-attachments/assets/031e33c8-4e17-49bf-85d4-d7ed2e2be941)
