@@ -1,7 +1,8 @@
 [View on Eraser](https://app.eraser.io/workspace/srtYuk9xciXjH6IUKwJs)
 <br>
 
-![image](https://github.com/user-attachments/assets/98ccf9eb-6315-47ae-92f6-406786d14fb7)
+![image](https://github.com/user-attachments/assets/a50682b5-0825-44e5-81b8-2ca5f1ce4279)
+
 
 
 
