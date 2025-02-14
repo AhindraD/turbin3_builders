@@ -4,7 +4,8 @@
 
 - # CAPSTONE: PrismPapers - Decentralized Research Platform
   ## Architecture Diagram:
-  ![image](https://github.com/user-attachments/assets/86a1cd32-c743-46d0-aa94-300dd0d7981d)
+ ![image](https://github.com/user-attachments/assets/f129a8db-e477-480e-aa42-59fbe419103e)
+
 
 
   [View on Eraser](https://app.eraser.io/workspace/srtYuk9xciXjH6IUKwJs)
