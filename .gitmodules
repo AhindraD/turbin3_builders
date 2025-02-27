@@ -7,3 +7,6 @@
 [submodule "05.week4_nft_marketplace_anchor_program/nft_marketplace"]
 	path = 05.week4_nft_marketplace_anchor_program/nft_marketplace
 	url = https://github.com/AhindraD/nft_marketplace.git
+[submodule "05.week4_nft_staking_anchor_program/nft-staking_anchor"]
+	path = 05.week4_nft_staking_anchor_program/nft-staking_anchor
+	url = https://github.com/AhindraD/nft-staking-anchor.git
