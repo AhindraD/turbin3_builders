@@ -10,3 +10,6 @@
 [submodule "05.week4_nft_staking_anchor_program/nft-staking_anchor"]
 	path = 05.week4_nft_staking_anchor_program/nft-staking_anchor
 	url = https://github.com/AhindraD/nft-staking-anchor.git
+[submodule "00.CAPSTONE-PrismPapers-DeSCi/prism-papers-desci"]
+	path = 00.CAPSTONE-PrismPapers-DeSCi/prism-papers-desci
+	url = https://github.com/AhindraD/prism-papers-desci.git
