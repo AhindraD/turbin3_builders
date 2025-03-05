@@ -19,6 +19,7 @@
   PrismPapers is a blockchain-based platform designed to shake things up in academic publishing.
   Traditional academic publishing takes forever, costs too much, and is often opaque.
   PrismPapers is my way of fixing this mess. With blockchain, we can make the whole process speedy, transparent, and rewarding for everyone involved. Plus, I’m a tech geek who loves using blockchain to solve real-world problems.
+  [5MRvAZkDQK1u27EEzrdpKS6uUKsGqEPRkztZVapcTcLv](https://explorer.solana.com/address/5MRvAZkDQK1u27EEzrdpKS6uUKsGqEPRkztZVapcTcLv?cluster=devnet)
 
 - ### Project Setup Pre-requisites:
 
