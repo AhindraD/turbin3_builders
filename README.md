@@ -1,6 +1,9 @@
 ![Screenshot 2025-01-08 153657](https://github.com/user-attachments/assets/6f0556bf-1fc9-45bd-8634-17f686b1bd7e)
 
-# Turbin3 2025 Q1 Cohort
+# Turbin3 2025 Q1 Cohort: 
+ [Q1_25_Builder_AhindraD](https://github.com/solana-turbin3/Q1_25_Builder_AhindraD)
+ 
+ Proof Of Work During My Time In TURBIN3 Builders Cohort Q1 2025 🦀
 
 # CAPSTONE - PrismPapers: The Transparent Research Publishing and Reviewing Platform. [DeSci]
 
@@ -81,21 +84,21 @@
   <br>
   <br>
 
-- # WEEK2: Task 02 - Minted OG NFT
+- ## WEEK2: Task 02 - Minted OG NFT
 
- ![Screenshot 2025-01-17 050131](https://github.com/user-attachments/assets/031e33c8-4e17-49bf-85d4-d7ed2e2be941)
+   ![Screenshot 2025-01-17 050131](https://github.com/user-attachments/assets/031e33c8-4e17-49bf-85d4-d7ed2e2be941)
 
-  ## Transaction Hash: https://explorer.solana.com/address/6X1EaiVhcn8z3GNb2nmtBDvoA33sr87AMfcp5rNkiuMf/metadata?cluster=devnet
-
-  <br>
-
-
-- # WEEK1: Task 02 - RUST : Interaction with the WBA Prereq Program:
-
-  ## Transaction Hash: https://explorer.solana.com/tx/5WYcvZjpouBusi3D8zjWjQJqUtaEJjSTMjRKAFu2pMkcZTa3mkqT2f32EP1CFcFnahJ9a3M1zy1UEWz3hUjZ6jV8?cluster=devnet
+    ### Transaction Hash: https://explorer.solana.com/address/6X1EaiVhcn8z3GNb2nmtBDvoA33sr87AMfcp5rNkiuMf/metadata?cluster=devnet
 
   <br>
 
-- # WEEK1: Task 01 - Interaction with the Prereq Program:
 
-  ## Transaction Hash: https://explorer.solana.com/tx/22STvcPPZx8FtvxtyeqJEhWKEXuRAiiDzQqmAqR3mEkzqmH4jKKMEoZYt6NhDi3LsmwA3roENDWt1cqK55FQdpMN?cluster=devnet
+- ## WEEK1: Task 02 - RUST : Interaction with the WBA Prereq Program:
+
+  ### Transaction Hash: https://explorer.solana.com/tx/5WYcvZjpouBusi3D8zjWjQJqUtaEJjSTMjRKAFu2pMkcZTa3mkqT2f32EP1CFcFnahJ9a3M1zy1UEWz3hUjZ6jV8?cluster=devnet
+
+  <br>
+
+- ## WEEK1: Task 01 - Interaction with the Prereq Program:
+
+  ### Transaction Hash: https://explorer.solana.com/tx/22STvcPPZx8FtvxtyeqJEhWKEXuRAiiDzQqmAqR3mEkzqmH4jKKMEoZYt6NhDi3LsmwA3roENDWt1cqK55FQdpMN?cluster=devnet
